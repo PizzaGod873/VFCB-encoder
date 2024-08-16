@@ -1,4 +1,4 @@
-# VFCB-encoder
-Vowel forward consonant backwards
-Basic encoder by me
-All you need is a software to run the code.
+# VFCB-encoder   
+Vowel forward consonant backward   
+Basic encoder by me   
+All you need is software to run the code.   
