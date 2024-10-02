@@ -67,8 +67,6 @@ namespace learnButAppO
             label1.Text = "Enter the text to " + comboBox1.SelectedItem.ToString() + " below.";
             textBox1.Visible = true;
             checkBox1.Visible = true;
-            button1.Text = comboBox1.SelectedItem.ToString() + " text!";
-            button1.Visible = true;
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -93,7 +91,7 @@ namespace learnButAppO
                 label5.Visible = true;
                 label4.Text = "Your " + comboBox1.SelectedItem.ToString() + "d message is";
                 textBox2.Text = encodedmsg;
-                if (textBox1.Text == null)
+                if (textBox1.Text != null)
                 {
                     System.Windows.Forms.Clipboard.SetText(encodedmsg);
                 }
@@ -107,7 +105,7 @@ namespace learnButAppO
                 label5.Visible = true;
                 label4.Text = "Your " + comboBox1.SelectedItem.ToString() + "d message is";
                 textBox2.Text = decodedmsg;
-                if (textBox1.Text == null)
+                if (textBox1.Text != null)
                 {
                     System.Windows.Forms.Clipboard.SetText(decodedmsg);
                 }
