@@ -74,10 +74,12 @@ namespace learnButAppO
             if (checkBox1.Checked)
             {
                 textBox1.UseSystemPasswordChar = false;
+                textBox2.UseSystemPasswordChar = false; ;
             }
             else
             {
                 textBox1.UseSystemPasswordChar = true;
+                textBox2.UseSystemPasswordChar = true;
             }
         }
 
@@ -85,18 +87,15 @@ namespace learnButAppO
         {
             if (comboBox1.SelectedItem.ToString() == "Encode")
             {
-                if (textBox1.Text != null)
+                string encodedmsg = EncodeMessage(textBox1.Text);
+                label4.Visible = true;
+                textBox2.Visible = true;
+                checkBox2.Visible = true;
+                label4.Text = "Your " + comboBox1.SelectedItem.ToString() + "d message is";
+                textBox2.Text = encodedmsg;
+                if (textBox1.Text != "" & checkBox2.Checked == true)
                 {
-                    string encodedmsg = EncodeMessage(textBox1.Text);
-                    label4.Visible = true;
-                    textBox2.Visible = true;
-                    label5.Visible = true;
-                    label4.Text = "Your " + comboBox1.SelectedItem.ToString() + "d message is";
-                    textBox2.Text = encodedmsg;
-                    if (textBox1.Text != "")
-                    {
-                        System.Windows.Forms.Clipboard.SetText(encodedmsg);
-                    }
+                    System.Windows.Forms.Clipboard.SetText(encodedmsg);
                 }
             
             }
@@ -105,10 +104,10 @@ namespace learnButAppO
                 string decodedmsg = DecodeMessage(textBox1.Text);
                 label4.Visible = true;
                 textBox2.Visible = true;
-                label5.Visible = true;
+                checkBox2.Visible = true;
                 label4.Text = "Your " + comboBox1.SelectedItem.ToString() + "d message is";
                 textBox2.Text = decodedmsg;
-                if (textBox1.Text != "")
+                if (textBox1.Text != "" & checkBox2.Checked == true)
                 {
                     System.Windows.Forms.Clipboard.SetText(decodedmsg);
                 }
