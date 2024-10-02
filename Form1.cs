@@ -1,5 +1,4 @@
 using System.Text;
-using System.Windows.Forms;
 
 namespace learnButAppO
 {
@@ -62,7 +61,7 @@ namespace learnButAppO
 
             return decodedMessage.ToString();
         }
-        
+
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             label1.Text = "Enter the text to " + comboBox1.SelectedItem.ToString() + " below.";
@@ -84,7 +83,7 @@ namespace learnButAppO
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
             if (comboBox1.SelectedItem.ToString() == "Encode")
             {
@@ -94,7 +93,11 @@ namespace learnButAppO
                 label5.Visible = true;
                 label4.Text = "Your " + comboBox1.SelectedItem.ToString() + "d message is";
                 textBox2.Text = encodedmsg;
-                System.Windows.Forms.Clipboard.SetText(encodedmsg);
+                if (textBox1.Text == null)
+                {
+                    System.Windows.Forms.Clipboard.SetText(encodedmsg);
+                }
+            
             }
             else
             {
@@ -104,7 +107,10 @@ namespace learnButAppO
                 label5.Visible = true;
                 label4.Text = "Your " + comboBox1.SelectedItem.ToString() + "d message is";
                 textBox2.Text = decodedmsg;
-                System.Windows.Forms.Clipboard.SetText(decodedmsg);
+                if (textBox1.Text == null)
+                {
+                    System.Windows.Forms.Clipboard.SetText(decodedmsg);
+                }
             }
         }
     }
