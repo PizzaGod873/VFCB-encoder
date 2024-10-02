@@ -85,15 +85,18 @@ namespace learnButAppO
         {
             if (comboBox1.SelectedItem.ToString() == "Encode")
             {
-                string encodedmsg = EncodeMessage(textBox1.Text);
-                label4.Visible = true;
-                textBox2.Visible = true;
-                label5.Visible = true;
-                label4.Text = "Your " + comboBox1.SelectedItem.ToString() + "d message is";
-                textBox2.Text = encodedmsg;
                 if (textBox1.Text != null)
                 {
-                    System.Windows.Forms.Clipboard.SetText(encodedmsg);
+                    string encodedmsg = EncodeMessage(textBox1.Text);
+                    label4.Visible = true;
+                    textBox2.Visible = true;
+                    label5.Visible = true;
+                    label4.Text = "Your " + comboBox1.SelectedItem.ToString() + "d message is";
+                    textBox2.Text = encodedmsg;
+                    if (textBox1.Text != "")
+                    {
+                        System.Windows.Forms.Clipboard.SetText(encodedmsg);
+                    }
                 }
             
             }
@@ -105,7 +108,7 @@ namespace learnButAppO
                 label5.Visible = true;
                 label4.Text = "Your " + comboBox1.SelectedItem.ToString() + "d message is";
                 textBox2.Text = decodedmsg;
-                if (textBox1.Text != null)
+                if (textBox1.Text != "")
                 {
                     System.Windows.Forms.Clipboard.SetText(decodedmsg);
                 }
