@@ -74,7 +74,7 @@ namespace learnButAppO
             if (checkBox1.Checked)
             {
                 textBox1.UseSystemPasswordChar = false;
-                textBox2.UseSystemPasswordChar = false; ;
+                textBox2.UseSystemPasswordChar = false;
             }
             else
             {
